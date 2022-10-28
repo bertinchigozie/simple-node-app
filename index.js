@@ -20,6 +20,4 @@ const server = http.createServer((req, res) => {
 
 // Listening on a port
 const port = 8000;
-server.listen(port, "localhost", () => {
-  console.log(`Listening to a request on port ${port}...`);
-});
+server.listen(port, "localhost");
