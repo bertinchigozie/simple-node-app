@@ -14,9 +14,6 @@ const server = http.createServer((req, res) => {
 
     res.end(data);
   } else {
-    res.writeHead(404, {
-      "Content-type": "text/html",
-    });
     res.end("<h1>Page Not Found</h1>");
   }
 });
