@@ -1,5 +1,6 @@
 const fs = require("fs");
 const express = require("express");
+const port = process.env.PORT || 8000;
 
 const app = express();
 // READING OUR JSON FILE
@@ -16,5 +17,4 @@ app.get("/api", (req, res) => {
 });
 
 // Listening on a port
-const port = 8000;
 app.listen(port, "localhost");
