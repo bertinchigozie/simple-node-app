@@ -2,14 +2,17 @@ const fs = require("fs");
 const express = require("express");
 
 const app = express();
-// Reading our json file
+// READING OUR JSON FILE
 const data = JSON.parse(fs.readFileSync(`${__dirname}/data.json`));
 
+// OUTPUTING THE JSON FILE
 app.get("/", (req, res) => {
-  res.status(200).json(data);
+  res.type("json");
+  res.status(200).send(data);
 });
 app.get("/api", (req, res) => {
-  res.status(200).json(data);
+  res.type("json");
+  res.status(200).send(data);
 });
 
 // Listening on a port
