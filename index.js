@@ -13,8 +13,18 @@ app.get("/", (req, res) => {
   res.status(200).send(data);
 });
 app.get("/api", (req, res) => {
-  res.type("json");
-  res.status(200).send(data);
+  res.type("html");
+  res.status(200).send(`
+  <html>
+      <body>
+          <form method="post" action="https://simple-node-app-cg6k.onrender.com">Name: 
+              <input type="text" name="name" />
+              <input type="number" value="Submit" />
+              <input type="number" value="Submit" />
+              <input type="button" value="Submit" />
+          </form>
+      </body>
+  </html>`);
 });
 
 app.post("/api", (req, res) => {
