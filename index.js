@@ -23,7 +23,7 @@ app.post("/api/post", (req, res) => {
     res.status(200);
     res.send({
       slackname: "Godzie",
-      result: req.body.x + req.body.y,
+      result: Number(req.body.x) + Number(req.body.y),
       operation_type: req.body.operation_type,
     });
   }
@@ -32,7 +32,7 @@ app.post("/api/post", (req, res) => {
     res.status(200);
     res.send({
       slackname: "Godzie",
-      result: req.body.x - req.body.y,
+      result: Number(req.body.x) - Number(req.body.y),
       operation_type: req.body.operation_type,
     });
   }
@@ -41,7 +41,7 @@ app.post("/api/post", (req, res) => {
     res.status(200);
     res.send({
       slackname: "Godzie",
-      result: req.body.x * req.body.y,
+      result: Number(req.body.x) * Number(req.body.y),
       operation_type: req.body.operation_type,
     });
   }
