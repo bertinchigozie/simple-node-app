@@ -18,27 +18,27 @@ app.get("/api", (req, res) => {
 });
 
 app.post("/api", (req, res) => {
-  if (req.body.operation_type === "+") {
+  if (req.body.operation_type === "addition") {
     res.type("json");
-    res.status(201);
+    res.status(200);
     res.send({
       slackname: "Godzie",
       result: Number(req.body.x) + Number(req.body.y),
       operation_type: req.body.operation_type,
     });
   }
-  if (req.body.operation_type === "-") {
+  if (req.body.operation_type === "subtraction") {
     res.type("json");
-    res.status(201);
+    res.status(200);
     res.send({
       slackname: "Godzie",
       result: Number(req.body.x) - Number(req.body.y),
       operation_type: req.body.operation_type,
     });
   }
-  if (req.body.operation_type === "*") {
+  if (req.body.operation_type === "multiplication") {
     res.type("json");
-    res.status(201);
+    res.status(200);
     res.send({
       slackname: "Godzie",
       result: Number(req.body.x) * Number(req.body.y),
