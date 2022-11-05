@@ -12,12 +12,8 @@ app.get("/", (req, res) => {
   res.type("json");
   res.status(200).send(data);
 });
-app.get("/api", (req, res) => {
-  res.type("json");
-  res.status(200).send(data);
-});
 
-app.post("/api", (req, res) => {
+app.post("/", (req, res) => {
   if (req.body.operation_type === "addition") {
     res.type("json");
     res.status(200);
