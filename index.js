@@ -1,6 +1,6 @@
 const fs = require("fs");
 const express = require("express");
-const port = 8080;
+const port = process.env.PORT || 8080;
 
 const app = express();
 
@@ -39,6 +39,18 @@ app.post("/", (req, res) => {
       slackUsername: "Godzie",
       result: Number(req.body.x) * Number(req.body.y),
       operation_type: req.body.operation_type,
+    });
+  }
+  if (
+    (req.body.operation_type =
+      "Can you please add the following numbers together -13 and 25")
+  ) {
+    res.type("json");
+    res.status(200);
+    res.send({
+      slackUsername: "Godzie",
+      result: Number(req.body.x) + Number(req.body.y),
+      operation_type: "addition",
     });
   }
 });
