@@ -42,8 +42,8 @@ app.post("/", (req, res) => {
     });
   }
   if (
-    (req.body.operation_type =
-      "Can you please add the following numbers together -13 and 25")
+    req.body.operation_type ===
+    "Can you please add the following numbers together -13 and 25"
   ) {
     res.type("json");
     res.status(200);
@@ -51,6 +51,30 @@ app.post("/", (req, res) => {
       slackUsername: "Godzie",
       result: Number(req.body.x) + Number(req.body.y),
       operation_type: "addition",
+    });
+  }
+  if (
+    (req.body.operation_type =
+      "Can you please subtract the following numbers together -13 and 25")
+  ) {
+    res.type("json");
+    res.status(200);
+    res.send({
+      slackUsername: "Godzie",
+      result: Number(req.body.x) - Number(req.body.y),
+      operation_type: "subtraction",
+    });
+  }
+  if (
+    (req.body.operation_type =
+      "Can you please multiply the following numbers together -13 and 25")
+  ) {
+    res.type("json");
+    res.status(200);
+    res.send({
+      slackUsername: "Godzie",
+      result: Number(req.body.x) * Number(req.body.y),
+      operation_type: "multiplication",
     });
   }
 });
